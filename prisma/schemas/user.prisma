@@ -1,0 +1,12 @@
+model User {
+  id            String          @id @default(uuid())
+  name          String
+  email         String          @unique
+  password      String
+  role          UserRole        @default(CUSTOMER)
+  status        Status          @default(APPROVED)
+  createdAt     DateTime        @default(now())
+  vendorProfile VendorProfile?
+  posts         CommunityPost[]
+  orders        Order[]
+}

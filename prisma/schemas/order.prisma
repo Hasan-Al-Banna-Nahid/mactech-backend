@@ -1,0 +1,11 @@
+model Order {
+  id        String        @id @default(uuid())
+  userId    String
+  user      User          @relation(fields: [userId], references: [id])
+  produceId String
+  vendorId  String
+  vendor    VendorProfile @relation(fields: [vendorId], references: [id])
+  produce   Produce       @relation(fields: [produceId], references: [id])
+  status    String        @default("PENDING")
+  orderDate DateTime      @default(now())
+}

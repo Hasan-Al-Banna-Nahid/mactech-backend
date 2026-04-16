@@ -1,0 +1,11 @@
+enum UserRole {
+  ADMIN
+  VENDOR
+  CUSTOMER
+}
+
+enum Status {
+  PENDING
+  APPROVED
+  REJECTED
+}
